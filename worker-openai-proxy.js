@@ -6,6 +6,10 @@ addEventListener('fetch', event => {
 
 async function handleRequest(request) {
   const url = new URL(request.url);
+  const allowedOrigin = 'i-robot.life';
+
+  if (origin === allowedOrigin) {
+    const url = new URL(request.url);
   url.host = OPENAI_URL.replace(/^https?:\/\//, '');
   
   const modifiedRequest = new Request(url.toString(), {
